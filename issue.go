@@ -40,15 +40,15 @@ type Journal struct {
 
 type Issue struct {
 	Id           int            `json:"id"`
-	Subject      string         `json:"subject"`
-	Description  string         `json:"description"`
-	ProjectId    int            `json:"project_id"`
+	Subject      string         `json:"subject,omitempty"`
+	Description  string         `json:"description,omitempty"`
+	ProjectId    int            `json:"project_id,omitempty"`
 	Project      *IdName        `json:"project"`
-	TrackerId    int            `json:"tracker_id"`
+	TrackerId    int            `json:"tracker_id,omitempty"`
 	Tracker      *IdName        `json:"tracker"`
 	ParentId     int            `json:"parent_issue_id,omitempty"`
 	Parent       *Id            `json:"parent"`
-	StatusId     int            `json:"status_id"`
+	StatusId     int            `json:"status_id,omitempty"`
 	Status       *IdName        `json:"status"`
 	PriorityId   int            `json:"priority_id,omitempty"`
 	Priority     *IdName        `json:"priority"`
@@ -56,7 +56,7 @@ type Issue struct {
 	FixedVersion *IdName        `json:"fixed_version"`
 	AssignedTo   *IdName        `json:"assigned_to"`
 	Category     *IdName        `json:"category"`
-	CategoryId   int            `json:"category_id"`
+	CategoryId   int            `json:"category_id,omitempty"`
 	Notes        string         `json:"notes"`
 	StatusDate   string         `json:"status_date"`
 	CreatedOn    string         `json:"created_on"`
